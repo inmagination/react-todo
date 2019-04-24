@@ -1,0 +1,35 @@
+@import '../../styles/settings/variables.scss';
+@import '../../styles/tools/mixins.scss';
+
+.todo-add {
+    display: flex; 
+
+    &__all {
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+        padding: 1.8rem;
+        font-size: 2rem;
+        color: $white;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        background-color: $crimson;
+        cursor: pointer;  
+        
+        &:hover {
+            background-color: $darkCrimson;
+        }
+
+        &.is-active {
+            background-color: $darkCrimson;
+        }
+    }
+
+    &__input {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-size: 2rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

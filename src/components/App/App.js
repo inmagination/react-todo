@@ -1,14 +1,12 @@
 import React from "react";
-import "./app.scss";
 
 // Components
-import { Input } from "../Input/Input";
-import { Button } from "../Button/Button";
+import AddTodo from "../AddTodo/AddTodo";
+import {TodoList} from "../TodoList/TodoList";
+import { Filters } from "../Filters/Filters";
 import { Alert } from "../Alert/Alert";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Todo from "../Todo/Todo";
-
+import "./app.scss";
 
 class App extends React.Component {	
     state = {	
@@ -95,20 +93,10 @@ class App extends React.Component {
 				<h1 className='app__title'>React Todo List</h1>
 				<p className='app__description'>Add, edit and delete all your tasks thanks to the magic of classic react.</p>				
 
-
-				<div className='app__header'>	
-					<div className='todo-all'>
-						<FontAwesomeIcon  icon='chevron-down' />
-					</div>
-
-					<Input
-						placeholder='Write a new todo and press enter' 
-						extraClass='app__input'
-						value={this.state.newTodo} 
-						onChange={(e) => this.handleChange(e)} 
-						onKeyPress={(e) => this.handleKeyPress(e)} />				
-				</div>
-
+				<AddTodo 
+					value={this.state.newTodo} 					
+					changeAdd={this.handleChange} 
+					enterAdd={this.handleKeyPress} />	
 
 				{this.state.todoAlert &&
 					<Alert 
@@ -116,46 +104,18 @@ class App extends React.Component {
 						icon='times-circle'
 						extraClass='margin-top-10'
 						text='Empty todo? You have to write something dude' />
-				}
-								
+				}								
 
 				{this.state.todos.length > 0 &&
-					<ul className='todo-list'>
-						{this.state.todos.map(todo => 
-							<Todo 
-								key={todo.id} 
-								{...todo} 
-								completeTodo={this.handleComplete}								
-								editableTodo={this.handleEditable}
-								updateTodo={this.handleUpdate}								
-								removeTodo={this.handleRemove} />							 
-						)} 
-					</ul>				
+					<TodoList 
+						todos={this.state.todos}
+						completeTodo={this.handleComplete}								
+                        editableTodo={this.handleEditable}
+                        updateTodo={this.handleUpdate}								
+                        removeTodo={this.handleRemove} />				
 				}  
 				
-				
-				<ul className='todo-filters'>
-					<li>X items left</li>
-					<li>
-						<Button  
-							size='small'
-							text='All' 
-							color='crimson' />
-					</li>
-					<li className='filter'>
-						<Button 
-							size='small'
-							text='Active' 
-							color='crimson' />
-					</li>
-					<li>
-						<Button  
-							size='small'
-							text='Completed' 
-							color='crimson' />
-					</li>					
-					<li className='link'>Clear completed</li>
-				</ul>                    
+				<Filters />				            
             </div>
         );
     }

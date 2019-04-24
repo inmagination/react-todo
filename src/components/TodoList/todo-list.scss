@@ -1,0 +1,20 @@
+@import '../../styles/settings/variables.scss';
+@import '../../styles/tools/mixins.scss';
+
+.todo-list {
+    margin-top: 1rem;
+    overflow: auto;
+
+    .todo:first-child { margin-top: 0; }
+    .todo:last-child { margin-bottom: 0; }    
+
+    &::-webkit-scrollbar {
+        width: 1.6rem; 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-left: 0.8rem solid rgba(0, 0, 0, 0);  
+        background-clip: padding-box;
+        background-color: rgba($white, 0.5);
+    }
+}

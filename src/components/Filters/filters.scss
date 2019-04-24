@@ -1,0 +1,15 @@
+@import '../../styles/settings/variables.scss';
+@import '../../styles/tools/mixins.scss';
+
+.todo-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    color: $white;
+    border-radius: 4px;
+    border: 1px solid $darkCrimson;
+    background-color: rgba($darkCrimson, 0.6); 
+}

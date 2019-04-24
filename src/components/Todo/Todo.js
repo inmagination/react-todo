@@ -17,10 +17,10 @@ class Todo extends React.Component {
 		this.setState({value: e.target.value});		
 	}
 
-	checkTodo = (id, e) => this.props.completeTodo(id, e);
-	editTodo = id => this.props.editableTodo(id);
-	textTodo = (state, e) => this.props.updateTodo(state, e);
-	deleteTodo = id => this.props.removeTodo(id);		
+	checkTodo = (id, e) => this.props.completeTodoList(id, e);
+	editTodo = id => this.props.editableTodoList(id);
+	textTodo = (state, e) => this.props.updateTodoList(state, e);
+	deleteTodo = id => this.props.removeTodoList(id);		
 
     render() {			
 		const props = this.props;
