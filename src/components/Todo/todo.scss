@@ -1,0 +1,50 @@
+@import '../../styles/settings/variables.scss';
+@import '../../styles/tools/mixins.scss';
+
+.todo {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;    
+    margin: 1rem 0;
+    border-radius: 4px;
+    border: 1px solid $white;
+    background-color: rgba( $white, .5 );
+
+    &.is-complete {
+        opacity: 0.5;
+
+        .todo__text {
+            text-decoration: line-through;
+        }        
+    }
+
+    &__text {
+        flex: auto;        
+        max-width: 45rem;        
+        font-size: 1.5rem;
+        text-align: left;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+     &__input {
+        flex: auto;
+        text-align: left;
+    }
+
+    &__icon {
+        margin-left: 1rem;
+        padding: 0.5rem;
+        font-size: 1.8rem;
+        color: $darkCrimson;         
+        border-radius: 4px;
+        background-color: rgba( $white, .5 );
+        cursor: pointer;
+
+        &:hover {
+            color: $white;
+            background-color: rgba( $darkCrimson, .5 );
+        }        
+    }
+}

@@ -1,0 +1,21 @@
+@import '../../styles/settings/variables.scss';
+@import '../../styles/tools/mixins.scss';
+
+.c-input {
+    --border-color: #{$darkCrimson};
+
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    outline-color: var(--border-color);
+
+    &:focus {
+        border-color: var(--border-color)
+    }
+
+    &--error {
+        border-color: var(--red);
+	}
+}
