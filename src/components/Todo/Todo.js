@@ -24,16 +24,17 @@ class Todo extends React.Component {
 
     render() {			
 		const props = this.props;
-		const completeClass = props.isComplete ? 'is-complete' : '';
+		const completeClass = props.isComplete ? 'is-complete' : '';		
 
-        return (
+        return (	
 			<li className={`todo ${completeClass}`}>
 				<Checkbox
 					extraClass='todo__check'
-					id={props.id}					
+					id={props.id}	
+					checked={props.isComplete}				
 					onChange={() => this.checkTodo(props.id)} />
 
-				{!this.props.isEditable ? (					
+				{!props.isEditable ? (					
 					<div className='todo__text'>{this.state.value}</div>
 
 				) : (
@@ -56,7 +57,8 @@ class Todo extends React.Component {
 					onClick={() => this.deleteTodo(props.id)}>		
 					<FontAwesomeIcon icon='trash-alt' />							
 				</div>
-			</li>			
+			</li>
+						
 		)
     }
 }
@@ -65,6 +67,11 @@ export default Todo;
 
 Todo.propTypes = {
 	id: PropTypes.number,
+	isComplete: PropTypes.bool,
+	isEditable: PropTypes.bool,
 	text: PropTypes.string,
-	onChange: PropTypes.func
+	completeTodoList: PropTypes.func,
+	editableTodoList: PropTypes.func,
+	removeTodoList: PropTypes.func,
+	updateTodoList: PropTypes.func
 };

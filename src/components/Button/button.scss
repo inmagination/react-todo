@@ -36,6 +36,17 @@
         --bg-color: #{$darkGrey};
     }
 
+    &--link {
+        --padding: 0;
+        --color: #{$white};
+        --bg-color: transparent;
+        --bg-color-hover: transparent;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     &--blue {
         --bg-color: #{$blue};
         --bg-color-hover: #{$darkBlue};

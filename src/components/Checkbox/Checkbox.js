@@ -11,13 +11,13 @@ export const Checkbox = props => {
                 type='checkbox' 
                 id={props.id}
                 checked={props.isChecked}
-                onChange={props.onChange} />
-
+                onChange={props.onChange} />  
+                        
             <label 
                 className='c-checkbox__label' 
                 htmlFor={props.id}>
                 {props.text}
-            </label>
+            </label>            
         </div>
     )
 }

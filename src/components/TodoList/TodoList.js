@@ -21,7 +21,7 @@ export const TodoList = props => {
 }
 
 TodoList.propTypes = { 
-    todo: PropTypes.arrayOf(PropTypes.element).isRequired,
+    todo: PropTypes.arrayOf(PropTypes.element),
     completeTodoList: PropTypes.func,
     editableTodoList: PropTypes.func,
     updateTodoList: PropTypes.func,    

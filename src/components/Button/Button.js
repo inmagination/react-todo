@@ -6,11 +6,12 @@ import "./button.scss";
 
 export const Button = props => {  
     const sizeClass = props.size ? `c-button--${props.size}` : '';
+    const typeClass = props.type ? `c-button--${props.type}` : '';
     const colorClass = props.color ? `c-button--${props.color}` : '';
 
     return (
         <button
-            className={`c-button ${colorClass} ${sizeClass} ${props.extraClass}`} 
+            className={`c-button ${colorClass} ${typeClass} ${sizeClass} ${props.extraClass}`} 
             onClick={props.onClick}>
             {props.icon
                 ? <FontAwesomeIcon
@@ -23,12 +24,14 @@ export const Button = props => {
 };
 
 Button.defaultProps = {
+    type: '',
     extraClass: '',
     icon: '',
     color: ''
 }
 
 Button.propTypes = { 
+    type: PropTypes.string,
     color: PropTypes.string,
     size: PropTypes.string,
     extraClass: PropTypes.string, 
