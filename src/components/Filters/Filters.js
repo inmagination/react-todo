@@ -10,34 +10,28 @@ export const Filters = props => {
 
 	return (
 		<ul className='todo-filters'>
-            <li>{props.totalTodos - props.countCompleted} items left</li>
+            <li className='filter filter__items'>{props.totalTodos - props.countCompleted} items left</li>
 
-            <li>
+            <li className='filter filter__buttons'>
                 <Button  
                     size='small'
                     text='All' 
                     color='crimson' 
-                    onClick={() => clickFilter('All') } />
-            </li>
-
-            <li>
+                    onClick={() => clickFilter('All') } />            
                 <Button 
                     size='small'
                     text='Active' 
                     color='crimson'
-                    onClick={() => clickFilter('Active') } />
-            </li>
-
-            <li>
+                    onClick={() => clickFilter('Active') } />            
                 <Button  
                     size='small'
                     text='Completed' 
                     color='crimson' 
                     onClick={() => clickFilter('Completed') } />
-            </li>	
+            </li>            
 
             {props.countCompleted > 0 &&				
-                <li>
+                <li className='filter filter__clear'>
                     <Button  
                         type='link'
                         size='small'

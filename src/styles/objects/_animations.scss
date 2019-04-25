@@ -2,18 +2,50 @@
 // Animations
 // --------------------------------------------------------
 
-.zoom-in {
-	animation-name: zoomIn;
-	animation-duration: 0.5s;
+.slideInDown { animation-name: slideInDown; }
+.slideInUp { animation-name: slideInUp; }
+.zoomIn { animation-name: zoomIn; }
+.zoomOut { animation-name: zoomOut; }
+
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-@keyframes zoom-in {
-	from {
-		opacity: 0;
-		transform: scale3d(0.3, 0.3, 0.3);
-	}
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
 
-	50% {
-		opacity: 1;
-	}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 0;
+    }
 }

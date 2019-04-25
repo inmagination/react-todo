@@ -21,6 +21,8 @@
 	}
 	
 	&__label {
+		--size: 1.4rem;
+
         display: flex;
         align-items: center;
         font-size: 1.5rem;
@@ -29,12 +31,16 @@
 		&:before {
             content: '';  
             display: block;          
-			width: 1.8rem;
-            height: 1.8rem;            
+			width: var(--size);
+            height: var(--size);           
             margin-right: 1rem;			
 			border: 2px solid var(--border);
 			border-radius: 50%;
             background-color: var(--background);
+		}
+
+		@include mediaTablet {			
+			--size: 1.8rem;
 		}
 	}
 	

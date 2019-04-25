@@ -10,7 +10,7 @@ export const Checkbox = props => {
                 className='c-checkbox__input' 
                 type='checkbox' 
                 id={props.id}
-                checked={props.isChecked}
+                checked={props.checked}
                 onChange={props.onChange} />  
                         
             <label 

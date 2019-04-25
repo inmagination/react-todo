@@ -11,34 +11,54 @@
     justify-content: center;
     height: 100%;
     min-height: 100%;
-    padding: 6rem 0;
     text-align: center;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 
     .l-container {
         display: flex;
         flex-direction: column;
-        padding-top: 2rem;
+        padding: 1.5rem;
         overflow: hidden;
-    }       
+
+        @include mediaTablet { 
+            padding: 6rem 0;        
+        }
+    }           
 
     &__icon {
-        font-size: 4.5rem;
+        font-size: 3rem;
         opacity: 0.8;
+
+        @include mediaTablet { 
+            font-size: 4.5rem;      
+        }
     }
     
     &__title {
         margin-top: 1rem;
-        font-size: 7rem;
+        font-size: 4rem;
         font-weight: 700;
         color: $lightCrimson;
         text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.5); 
+
+        @include mediaTablet { 
+            font-size: 7rem;       
+        }
     }
 
     &__description {
+        --margin-bottom: 2rem;
+        --font-size: 1.5rem;
+
         margin-top: 1rem; 
-        margin-bottom: 4rem; 
-        font-size: 1.8rem;
+        margin-bottom: 4rem;         
+        font-size: 1.5rem;
         color: $white;
+        line-height: 1.2;
+
+        @include mediaTablet { 
+            --margin-bottom: 4rem; 
+            --font-size: 1.8rem;       
+        }
     }
 }
