@@ -2,11 +2,13 @@
 @import '../../styles/tools/mixins.scss';
 
 .c-input {
+    --padding: 0.5rem;
+    --font-size: 1.3rem;
     --border-color: #{$darkCrimson};
 
     width: 100%;
-    padding: 1rem;
-    font-size: 1.4rem;
+    padding: var(--padding);
+    font-size: var(--font-size);
     border: 2px solid transparent;
     border-radius: 4px;
     outline-color: var(--border-color);
@@ -17,5 +19,10 @@
 
     &--error {
         border-color: var(--red);
-	}
+    }
+    
+    @include mediaTablet {			
+        --padding: 1rem;
+        --font-size: 1.4rem;
+    }
 }

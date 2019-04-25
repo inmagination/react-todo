@@ -1,21 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Input } from "../Input/Input";
 import { Checkbox } from "../Checkbox/Checkbox";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./todo.scss";
 
 class Todo extends React.Component {
-	state = {
-		id: this.props.id,
+	state = {	
 		value: this.props.text
 	}
 
-	handleChange = e => {
-		this.setState({value: e.target.value});		
-	}
+	handleChange = e => this.setState({value: e.target.value});	
 
 	checkTodo = (id, e) => this.props.completeTodoList(id, e);
 	editTodo = id => this.props.editableTodoList(id);
